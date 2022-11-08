@@ -10,7 +10,7 @@ public class driver {
 
     private static WebDriver driver;
 
-    private static void createDriver(){
+    private static void createDriver() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -21,7 +21,7 @@ public class driver {
         return driver;
     }
 
-    public static void closeWebDriver(){
+    public static void closeWebDriver() {
         driver.quit();
     }
 
