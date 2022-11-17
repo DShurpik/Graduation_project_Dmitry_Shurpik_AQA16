@@ -4,23 +4,19 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import static driver.driver.*;
+import static driver.SimpleDriver.*;
 
 public abstract class BaseTest {
 
-    private WebDriver driver;
-
     @BeforeMethod
     public void setUp(){
-        driver = setWebDriver();
+        setWebDriver();
+        System.out.println("Create new driver");
     }
 
     @AfterMethod
     public void closeDriver(){
         closeWebDriver();
-    }
-
-    public WebDriver getDriver() {
-        return driver;
+        System.out.println("Close driver");
     }
 }

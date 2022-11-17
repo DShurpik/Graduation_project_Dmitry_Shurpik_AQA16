@@ -3,10 +3,11 @@ package driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class driver {
+public class SimpleDriver {
 
     private static WebDriver driver;
 
@@ -14,6 +15,12 @@ public class driver {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
+    }
+
+    public static WebDriver getDriver() {
+        return driver;
     }
 
     public static WebDriver setWebDriver() {
@@ -24,5 +31,6 @@ public class driver {
     public static void closeWebDriver() {
         driver.quit();
     }
+
 
 }
