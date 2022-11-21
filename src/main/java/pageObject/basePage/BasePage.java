@@ -36,4 +36,8 @@ public abstract class BasePage {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.attributeContains(by,nameAttribute, value));
     }
+
+    public String getText(By by) {
+        return getDriver().findElement(by).getText();
+    }
 }

@@ -1,5 +1,7 @@
 import org.testng.annotations.Test;
 
+import pageObject.apteka103Page.AccountPage;
+import pageObject.apteka103Page.DeleteUserPage;
 import pageObject.apteka103Page.RegistrationPage;
 import pageObject.apteka103Page.StartPage;
 import pageObject.basePage.BaseTest;
@@ -40,7 +42,7 @@ public class test extends BaseTest {
                 .alertIsDisplayed();
     }
 
-    /* 1 тест на использование некорректных данных */
+    /** 1 тест на использование некорректных данных */
     @Test(description = "Test with use incorrect data", enabled = false)
     public void incorrect_data_test() {
         new StartPage()
@@ -57,7 +59,7 @@ public class test extends BaseTest {
                 .alertIsDisplayed();
     }
 
-    /* 1 тест на проверку всплывающего сообщения */
+    /** 1 тест на проверку всплывающего сообщения */
     @Test(description = "popup message test",enabled = false)
     public void popup_test() {
         new StartPage()
@@ -67,7 +69,35 @@ public class test extends BaseTest {
                 .displayBlockAfterPopup();
     }
 
-    @Test
+    /** 1 тест на удаление сущности */
+    @Test(description = "delete user profile", enabled = false)
+    public void delete_user_test() throws InterruptedException {
+        new StartPage()
+                .open("https://apteka.103.by/")
+                .clickOnProfileBtn();
+        new RegistrationPage()
+                .enterEmailForEnter("gimep90923@jernang.com")
+                .enterPasswordForEnter("d123456789")
+                .clickOnEnterBtn();
+        new StartPage()
+                .getNameLastNameUser("D S")
+                .openProfile()
+                .clickOnProfileField();
+        new AccountPage()
+                .clickOnSettingBtn()
+                .clickDeleteBtn().navigate();
+        new DeleteUserPage().enterEmail("gimep90923@jernang.com")
+                .clickOnCheckBox();
+
+        /** Тут надо доделать, кнопку удаления */
+
+        //Thread.sleep(6000);
+    }
+
+
+
+
+    @Test(enabled = true)
     public void test() {
         new StartPage()
                 .open("https://apteka.103.by/")

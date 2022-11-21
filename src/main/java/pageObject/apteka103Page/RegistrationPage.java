@@ -14,6 +14,9 @@ public class RegistrationPage extends BasePage {
     private final By registrationBtn = By.xpath("//*[contains(text(),'Регистрация')]");
     private final By enterBtn = By.xpath("//*[contains(text(),'Вход')]");
     private final By alert = By.xpath("//div[@class='alert alert--error']");
+    private final By emailFieldForEnter = By.id("username");
+    private final By passwordFieldForEnter = By.id("password");
+    private final By enterBtnForEnter = By.id("loginButton");
 
     public RegistrationPage enterName(String name) {
         enterText(nameField, name);
@@ -53,6 +56,21 @@ public class RegistrationPage extends BasePage {
     public RegistrationPage alertIsDisplayed() {
         elementIsDisplayed(alert);
         System.out.println("Alert is displayed");
+        return this;
+    }
+
+    public RegistrationPage enterEmailForEnter(String email) {
+        enterText(emailFieldForEnter, email);
+        return this;
+    }
+
+    public RegistrationPage enterPasswordForEnter(String email) {
+        enterText(passwordFieldForEnter, email);
+        return this;
+    }
+
+    public RegistrationPage clickOnEnterBtn() {
+        click(enterBtnForEnter);
         return this;
     }
 
