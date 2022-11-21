@@ -55,7 +55,6 @@ public class RegistrationPage extends BasePage {
 
     public RegistrationPage alertIsDisplayed() {
         elementIsDisplayed(alert);
-        System.out.println("Alert is displayed");
         return this;
     }
 

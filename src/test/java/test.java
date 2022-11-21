@@ -94,9 +94,6 @@ public class test extends BaseTest {
         //Thread.sleep(6000);
     }
 
-
-
-
     @Test(enabled = true)
     public void test() {
         new StartPage()

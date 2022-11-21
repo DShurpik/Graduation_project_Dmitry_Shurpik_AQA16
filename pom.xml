@@ -17,9 +17,12 @@
         <test.ng.version>7.6.1</test.ng.version>
         <selenium.version>4.6.0</selenium.version>
         <webdrivermanager.version>5.3.1</webdrivermanager.version>
-        <allure.testng.version>2.19.0</allure.testng.version>
-        <suiteXml/>
-
+        <allure.testng.version>2.20.0</allure.testng.version>
+        <logging.log4j.version>2.19.0</logging.log4j.version>
+        <dataformat.version>2.13.4</dataformat.version>
+        <log4j.version>1.2.17</log4j.version>
+        <lombok.version>1.18.24</lombok.version>
+        <suiteXmlFile/>
     </properties>
 
     <dependencies>
@@ -47,6 +50,36 @@
             <version>${allure.testng.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${logging.log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>${dataformat.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -57,7 +90,7 @@
                 <version>3.0.0-M4</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/${suiteXml}.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/${suiteXmlFile}.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.9.6/aspectjweaver-1.9.6.jar -Xmx256m

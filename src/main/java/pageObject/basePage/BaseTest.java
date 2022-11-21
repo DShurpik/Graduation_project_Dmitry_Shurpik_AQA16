@@ -1,22 +1,23 @@
 package pageObject.basePage;
 
-import org.openqa.selenium.WebDriver;
+import lombok.extern.log4j.Log4j;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import static driver.SimpleDriver.*;
+
+@Log4j
 
 public abstract class BaseTest {
 
     @BeforeMethod
     public void setUp(){
         setWebDriver();
-        System.out.println("Create new driver");
     }
 
     @AfterMethod
     public void closeDriver(){
         closeWebDriver();
-        System.out.println("Close driver");
+        log.debug("Close driver" + getDriver().toString());
     }
 }

@@ -1,8 +1,11 @@
 package pageObject.apteka103Page;
 
+import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import pageObject.basePage.BasePage;
+
+@Log4j
 
 public class StartPage extends BasePage {
 
@@ -18,6 +21,7 @@ public class StartPage extends BasePage {
     private final By profileBtnAfterLogin = By.xpath("//span[@class='header__accountTitle']");
     private final By nameLastNameField = By.xpath("//span[@class='header__accountTitle']");
     private final By profileBtnOnProfile = By.xpath("//span[text()='Профиль']");
+    private final By title = By.xpath("//a[@class='b-header_inner_logo']");
 
     public StartPage open(String url) {
         load(url);
@@ -39,7 +43,13 @@ public class StartPage extends BasePage {
         return this;
     }
 
+    public StartPage titleIsDisplayed() {
+        elementIsDisplayed(title);
+        return this;
+    }
+
     public StartPage displayBlockAfterPopup() {
+        log.debug("Display block after popup");
         Assert.assertTrue(getAttributeFromElement(overlay,attribute, style));
         return this;
     }
@@ -61,6 +71,7 @@ public class StartPage extends BasePage {
 
     public StartPage getNameLastNameUser(String expectedResult) {
         Assert.assertEquals(getText(nameLastNameField), expectedResult, "Name and last name equal");
+        log.debug("Get name and last name from " + nameLastNameField );
         return this;
     }
 
