@@ -11,7 +11,8 @@ public class RegistrationPage extends BasePage {
     private final By passwordField = By.id("password");
     private final By passwordConfirmField = By.id("password-confirm");
     private final By registerBtn = By.xpath("//input[@value='Зарегистрироваться']");
-    private final By registrationBtn = By.xpath("//*[contains(text(),'Регистрация')]");
+    //private final By registrationBtn = By.xpath("//*[contains(text(),'Регистрация')]");
+    private final By registrationBtn = By.xpath("//a[@class='tabsItem']");
     private final By enterBtn = By.xpath("//*[contains(text(),'Вход')]");
     private final By alert = By.xpath("//div[@class='alert alert--error']");
     private final By emailFieldForEnter = By.id("username");

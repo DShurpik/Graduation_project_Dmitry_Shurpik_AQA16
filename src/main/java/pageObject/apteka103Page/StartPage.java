@@ -25,6 +25,13 @@ public class StartPage extends BasePage {
 
     public StartPage open(String url) {
         load(url);
+        log.debug("Open website " + url);
+        return this;
+    }
+
+    public StartPage open() {
+        load();
+        log.debug("Open website ");
         return this;
     }
 
@@ -50,7 +57,7 @@ public class StartPage extends BasePage {
 
     public StartPage displayBlockAfterPopup() {
         log.debug("Display block after popup");
-        Assert.assertTrue(getAttributeFromElement(overlay,attribute, style));
+        Assert.assertTrue(getAttributeFromElement(overlay, attribute, style));
         return this;
     }
 
@@ -71,7 +78,7 @@ public class StartPage extends BasePage {
 
     public StartPage getNameLastNameUser(String expectedResult) {
         Assert.assertEquals(getText(nameLastNameField), expectedResult, "Name and last name equal");
-        log.debug("Get name and last name from " + nameLastNameField );
+        log.debug("Get name and last name from " + nameLastNameField);
         return this;
     }
 

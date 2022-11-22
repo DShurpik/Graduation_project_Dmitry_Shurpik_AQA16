@@ -1,5 +1,4 @@
 import org.testng.annotations.Test;
-
 import pageObject.apteka103Page.AccountPage;
 import pageObject.apteka103Page.DeleteUserPage;
 import pageObject.apteka103Page.RegistrationPage;
@@ -8,7 +7,9 @@ import pageObject.basePage.BaseTest;
 
 public class test extends BaseTest {
 
-    /** 1 тест на создание сущности */
+    /**
+     * 1 тест на создание сущности
+     */
     @Test(description = "Create new user", enabled = false)
     public void create_user_test() {
         new StartPage()
@@ -23,9 +24,12 @@ public class test extends BaseTest {
                 .enterPasswordOnConfirmField("asdasd")
                 .clickOnRegisterBtn();
     }
-    /** 1 тест на проверку поля для ввода на граничные значения
+
+    /**
+     * 1 тест на проверку поля для ввода на граничные значения
      * (Пароль должен содержать буквы, цифры и быть не менее 8 символов.)
-     * Ввожу пароль с 1 буквой и 6 цифрами */
+     * Ввожу пароль с 1 буквой и 6 цифрами
+     */
     @Test(description = "Test on limit values", enabled = false)
     public void limit_value_test() {
         new StartPage()
@@ -42,7 +46,9 @@ public class test extends BaseTest {
                 .alertIsDisplayed();
     }
 
-    /** 1 тест на использование некорректных данных */
+    /**
+     * 1 тест на использование некорректных данных
+     */
     @Test(description = "Test with use incorrect data", enabled = false)
     public void incorrect_data_test() {
         new StartPage()
@@ -59,17 +65,21 @@ public class test extends BaseTest {
                 .alertIsDisplayed();
     }
 
-    /** 1 тест на проверку всплывающего сообщения */
-    @Test(description = "popup message test",enabled = false)
+    /**
+     * 1 тест на проверку всплывающего сообщения
+     */
+    @Test(description = "popup message test", enabled = true)
     public void popup_test() {
         new StartPage()
-                .open("https://apteka.103.by/")
+                .open()
                 .openFavoritePopup()
                 .favoriteTitleIsDisplayed()
                 .displayBlockAfterPopup();
     }
 
-    /** 1 тест на удаление сущности */
+    /**
+     * 1 тест на удаление сущности
+     */
     @Test(description = "delete user profile", enabled = false)
     public void delete_user_test() throws InterruptedException {
         new StartPage()
@@ -94,7 +104,7 @@ public class test extends BaseTest {
         //Thread.sleep(6000);
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void test() {
         new StartPage()
                 .open("https://apteka.103.by/")

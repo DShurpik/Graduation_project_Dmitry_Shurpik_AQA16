@@ -8,15 +8,22 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-import static driver.SimpleDriver.getDriver;
+
+import static PropertyReader.PropertyReader.getProperties;
+import static driver.DriverManager.getDriver;
 
 @Log4j
 
 public abstract class BasePage {
 
-    protected void load(String url){
-        //log.debug("Open website: " + url);
+
+    protected void load(String url) {
         getDriver().get(url);
+    }
+
+    protected void load() {
+        getDriver().get(getProperties().getProperty("url"));
+        log.debug(getProperties().getProperty("url"));
     }
 
     public void click(By by) {
@@ -42,7 +49,7 @@ public abstract class BasePage {
     public Boolean getAttributeFromElement(By by, String nameAttribute, String value) {
         log.debug("Get attribute: " + nameAttribute + ", from " + by.toString());
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
-        return wait.until(ExpectedConditions.attributeContains(by,nameAttribute, value));
+        return wait.until(ExpectedConditions.attributeContains(by, nameAttribute, value));
     }
 
     public String getText(By by) {
