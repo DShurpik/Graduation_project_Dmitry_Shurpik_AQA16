@@ -2,58 +2,61 @@ package pageObject.basePage;
 
 import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
-
+import java.util.Properties;
 
 import static PropertyReader.PropertyReader.getProperties;
 import static driver.DriverManager.getDriver;
 
-@Log4j
 
+@Log4j
 public abstract class BasePage {
 
+    protected Properties properties = getProperties();
+    protected WebDriver driver = getDriver();
 
     protected void load(String url) {
-        getDriver().get(url);
+        driver.get(url);
     }
 
     protected void load() {
-        getDriver().get(getProperties().getProperty("url"));
-        log.debug(getProperties().getProperty("url"));
+        driver.get(properties.getProperty("url"));
+        log.debug(properties.getProperty("url"));
     }
 
     public void click(By by) {
         log.debug("Driver click on element " + by);
-        getDriver().findElement(by).click();
+        driver.findElement(by).click();
     }
 
     public void enterText(By by, String text) {
         log.debug("Enter text: " + text + " on field " + by.toString());
-        getDriver().findElement(by).sendKeys(text);
+        driver.findElement(by).sendKeys(text);
     }
 
     public void elementIsDisplayed(By by) {
         log.debug("Element is displayed " + by.toString());
-        Assert.assertTrue(getDriver().findElement(by).isDisplayed());
+        Assert.assertTrue(driver.findElement(by).isDisplayed());
     }
 
     public void elementIsNotEnabled(By by) {
         log.debug("Element is enabled " + by.toString());
-        Assert.assertTrue(getDriver().findElement(by).isEnabled());
+        Assert.assertTrue(driver.findElement(by).isEnabled());
     }
 
     public Boolean getAttributeFromElement(By by, String nameAttribute, String value) {
         log.debug("Get attribute: " + nameAttribute + ", from " + by.toString());
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.attributeContains(by, nameAttribute, value));
     }
 
     public String getText(By by) {
         log.debug("Get text from " + by.toString());
-        return getDriver().findElement(by).getText();
+        return driver.findElement(by).getText();
     }
 }

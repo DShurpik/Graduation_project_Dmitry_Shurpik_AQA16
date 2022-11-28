@@ -3,10 +3,13 @@
 
 
 <suite name="test">
-    
+    <listeners>
+        <listener class-name="listener.Listener"></listener>
+    </listeners>
+
     <test name="test">
         <classes>
-            <class name="test"></class>
+            <class name="AddMedicineOnFavorite"></class>
         </classes>
     </test>
 

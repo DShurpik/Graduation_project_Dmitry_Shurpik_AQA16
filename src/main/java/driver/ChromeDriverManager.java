@@ -2,23 +2,36 @@ package driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.log4j.Log4j;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.time.Duration;
+import java.util.Properties;
+
+import static PropertyReader.PropertyReader.getProperties;
 
 
 @Log4j
 
 public class ChromeDriverManager extends DriverManager {
 
+    protected static Properties properties;
+
     @Override
     public void createDriver() {
+        WebDriver webDriver;
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(getChromeOptions());
+        webDriver = new ChromeDriver(getChromeOptions());
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.set(webDriver);
     }
 
-    private static ChromeOptions getChromeOptions() {
+    protected static ChromeOptions getChromeOptions() {
+        properties = getProperties();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments();
         return chromeOptions;
     }
 }

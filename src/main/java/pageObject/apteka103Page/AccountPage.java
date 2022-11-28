@@ -2,9 +2,8 @@ package pageObject.apteka103Page;
 
 import org.openqa.selenium.By;
 import pageObject.basePage.BasePage;
-import java.util.Set;
 
-import static driver.SimpleDriver.getDriver;
+import java.util.Set;
 
 public class AccountPage extends BasePage {
 
@@ -22,16 +21,16 @@ public class AccountPage extends BasePage {
     }
 
     public AccountPage navigate() {
-        String win1 = getDriver().getWindowHandle();
-        Set<String> tabs  = getDriver().getWindowHandles();
+        String win1 = driver.getWindowHandle();
+        Set<String> tabs = driver.getWindowHandles();
         String win2 = null;
-        for (String win : tabs){
+        for (String win : tabs) {
             if (!win.equals(win1)) {
                 win2 = win;
                 break;
             }
         }
-        getDriver().switchTo().window(win2);
+        driver.switchTo().window(win2);
         return this;
     }
 }

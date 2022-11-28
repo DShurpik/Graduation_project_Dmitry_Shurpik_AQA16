@@ -63,6 +63,7 @@ public class StartPage extends BasePage {
 
     public StartPage searchMedicine(String medicineName) {
         enterText(searchField, medicineName);
+        log.debug("Enter " + medicineName);
         return this;
     }
 

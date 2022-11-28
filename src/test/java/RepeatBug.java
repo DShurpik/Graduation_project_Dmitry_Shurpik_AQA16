@@ -3,7 +3,7 @@ import pageObject.apteka103Page.RegistrationPage;
 import pageObject.apteka103Page.StartPage;
 import pageObject.basePage.BaseTest;
 
-public class bug extends BaseTest {
+public class RepeatBug extends BaseTest {
 
     /**
      * Пароль должен содержать буквы, цифры и быть не менее 8 символов.
@@ -17,7 +17,7 @@ public class bug extends BaseTest {
     @Test(description = "successful registration with use only numbers in password", enabled = false)
     public void successful_test() {
         new StartPage()
-                .open("https://apteka.103.by/")
+                .open()
                 .openWindowForRegistration();
         new RegistrationPage()
                 .clickOnRegistrationBtn()
@@ -33,7 +33,7 @@ public class bug extends BaseTest {
     @Test(description = "not successful registration with use only letters in password", enabled = false)
     public void test_with_bug() {
         new StartPage()
-                .open("https://apteka.103.by/")
+                .open()
                 .openWindowForRegistration();
         new RegistrationPage()
                 .clickOnRegistrationBtn()
@@ -43,7 +43,6 @@ public class bug extends BaseTest {
                 .enterPassword("abcdefgh")
                 .enterPasswordOnConfirmField("abcdefgh")
                 .clickOnRegisterBtn();
-        //new StartPage().titleIsDisplayed();
+        new StartPage().titleIsDisplayed();
     }
-
 }
