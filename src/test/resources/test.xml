@@ -4,6 +4,16 @@
 
 <suite name="test">
 
+    <test name="Create delete user">
+        <classes>
+            <class name="CreateDeleteUser"/>
+            <parameter name="name" value="John"/>
+            <parameter name="lastName" value="Doe"/>
+            <parameter name="email" value="pasiijet476@nubotel.com"/>
+            <parameter name="password" value="d12345678"/>
+        </classes>
+    </test>
+
     <test name="Add medicine on favorite" enabled="true">
         <classes>
             <class name="AddMedicineOnFavorite"/>
@@ -37,6 +47,18 @@
             <parameter name="lastName" value="Doe"/>
             <parameter name="email" value="asaasdsdasddasd@te.vom"/>
             <parameter name="password" value="d123456"/>
+        </classes>
+    </test>
+
+    <test name="test with bug">
+        <classes>
+            <class name="RepeatBug"/>
+            <parameter name="name" value="John"/>
+            <parameter name="lastName" value="Doe"/>
+            <parameter name="email1" value="asasdasdaasd@test.vom"/>
+            <parameter name="email2" value="dddddaasddsdd@test.vom"/>
+            <parameter name="password1" value="aaaaaaaa"/>
+            <parameter name="password2" value="12345678"/>
         </classes>
     </test>
 

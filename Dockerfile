@@ -7,4 +7,4 @@ WORKDIR project
 
 COPY . .
 
-RUN mvn clean test -DsuiteXmlFile='test'
+RUN mvn clean test -DsuiteXmlFile='test' -Dconfig='apteka103'

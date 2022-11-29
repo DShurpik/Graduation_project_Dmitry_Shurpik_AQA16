@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 
-<suite name="test">
+<suite name="test create/delete user">
 
     <test name="Create delete user">
         <classes>
