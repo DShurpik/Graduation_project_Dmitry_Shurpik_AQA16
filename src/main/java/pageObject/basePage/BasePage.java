@@ -13,7 +13,6 @@ import java.util.Properties;
 import static PropertyReader.PropertyReader.getProperties;
 import static driver.DriverManager.getDriver;
 
-
 @Log4j
 public abstract class BasePage {
 

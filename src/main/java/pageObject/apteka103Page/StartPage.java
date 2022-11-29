@@ -6,7 +6,6 @@ import org.testng.Assert;
 import pageObject.basePage.BasePage;
 
 @Log4j
-
 public class StartPage extends BasePage {
 
     private final By accountWrapper = By.xpath("//span[contains(text(),'Войти')]");
@@ -92,6 +91,4 @@ public class StartPage extends BasePage {
         click(profileBtnOnProfile);
         return this;
     }
-
-
 }

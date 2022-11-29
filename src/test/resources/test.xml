@@ -3,13 +3,46 @@
 
 
 <suite name="test">
-    <listeners>
-        <listener class-name="listener.Listener"></listener>
-    </listeners>
 
-    <test name="test">
+    <test name="Add medicine on favorite" enabled="true">
         <classes>
-            <class name="AddMedicineOnFavorite"></class>
+            <class name="AddMedicineOnFavorite"/>
+            <parameter name="medicine1" value="Кардиомагнум"/>
+            <parameter name="medicine2" value="Аспирин кардио"/>
+        </classes>
+    </test>
+
+    <test name="Check Pop up and Dialog window" enabled="true">
+        <classes>
+            <class name="CheckPopUpMsg"/>
+            <class name="DialogWindow"/>
+            <parameter name="medicine" value="Аспирин кардио"/>
+        </classes>
+    </test>
+
+    <test name="Incorrect data use" enabled="true">
+        <classes>
+            <class name="IncorrectDataUse"/>
+            <parameter name="name" value="John"/>
+            <parameter name="lastName" value="Doe"/>
+            <parameter name="email" value="asasdasddasd@te.vom"/>
+            <parameter name="password" value="!!!!!!!!"/>
+        </classes>
+    </test>
+
+    <test name="Limit values use" enabled="true">
+        <classes>
+            <class name="LimitValuesUse"/>
+            <parameter name="name" value="John"/>
+            <parameter name="lastName" value="Doe"/>
+            <parameter name="email" value="asaasdsdasddasd@te.vom"/>
+            <parameter name="password" value="d123456"/>
+        </classes>
+    </test>
+
+    <test name="Upload file" enabled="true">
+        <classes>
+            <class name="UploadFile"/>
         </classes>
     </test>
 

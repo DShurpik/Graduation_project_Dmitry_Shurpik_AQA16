@@ -15,8 +15,8 @@ public class RegistrationPage extends BasePage {
     private final By registrationBtn = By.xpath("//a[@class='tabsItem']");
     private final By enterBtn = By.xpath("//*[contains(text(),'Вход')]");
     private final By alert = By.xpath("//div[@class='alert alert--error']");
-    private final By emailFieldForEnter = By.id("username");
-    private final By passwordFieldForEnter = By.id("password");
+    private final By emailFieldForEnter = By.xpath("//input[@tabindex='1']");
+    private final By passwordFieldForEnter = By.xpath("//input[@tabindex='2']");
     private final By enterBtnForEnter = By.id("loginButton");
 
     public RegistrationPage enterName(String name) {
@@ -73,7 +73,4 @@ public class RegistrationPage extends BasePage {
         click(enterBtnForEnter);
         return this;
     }
-
-
-
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="test">
+
+    <test name="Create delete user">
+        <classes>
+            <class name="CreateDeleteUser"/>
+            <parameter name="name" value="John"/>
+            <parameter name="lastName" value="Doe"/>
+            <parameter name="email" value="pasijet476@nubotel.com"/>
+            <parameter name="password" value="d12345678"/>
+        </classes>
+    </test>
+
+</suite>

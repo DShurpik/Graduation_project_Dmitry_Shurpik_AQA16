@@ -11,5 +11,4 @@ public class Listener implements ITestListener {
         String propertyName = context.getSuite().getParameter("config") == null ? System.getProperty("config") : context.getSuite().getParameter("config");
         new PropertyReader(propertyName);
     }
-
 }

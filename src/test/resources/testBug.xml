@@ -3,11 +3,17 @@
 
 <suite name="test">
 
+    <parameter name="name" value="John"/>
+    <parameter name="lastName" value="Doe"/>
+    <parameter name="email1" value="asdasdaasd@test.vom"/>
+    <parameter name="email2" value="dddaasddsdd@test.vom"/>
+    <parameter name="password1" value="aaaaaaaa"/>
+    <parameter name="password2" value="12345678"/>
+
     <test name="test">
         <classes>
-            <class name="RepeatBug"></class>
+            <class name="RepeatBug"/>
         </classes>
     </test>
-
 
 </suite>

@@ -17,7 +17,6 @@ import static driver.DriverManager.getDriver;
 
 
 @Listeners(Listener.class)
-
 @Log4j
 
 public abstract class BaseTest {
@@ -30,7 +29,7 @@ public abstract class BaseTest {
         properties = getProperties();
         DriverFactory.getManager(DriverManagerType.valueOf(properties.getProperty("browser").toUpperCase()));
     }
-    
+
     @AfterMethod
     public void cleanCookies() {
         DriverManager.driver.get().manage().deleteAllCookies();

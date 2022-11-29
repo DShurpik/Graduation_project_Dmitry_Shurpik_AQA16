@@ -11,7 +11,6 @@ import java.util.Properties;
 
 import static PropertyReader.PropertyReader.getProperties;
 
-
 @Log4j
 
 public class ChromeDriverManager extends DriverManager {
@@ -31,7 +30,7 @@ public class ChromeDriverManager extends DriverManager {
     protected static ChromeOptions getChromeOptions() {
         properties = getProperties();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments();
+        chromeOptions.addArguments("--headless");
         return chromeOptions;
     }
 }

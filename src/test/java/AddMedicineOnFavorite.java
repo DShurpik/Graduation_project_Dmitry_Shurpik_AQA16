@@ -1,3 +1,4 @@
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObject.apteka103Page.SearchResultPage;
 import pageObject.apteka103Page.StartPage;
@@ -8,10 +9,9 @@ import java.util.List;
 
 public class AddMedicineOnFavorite extends BaseTest {
 
-
+    @Parameters("medicine1")
     @Test
-    public void test1() {
-        String medicineName = "Кардиомагнум";
+    public void test1(String medicine1) {
         List<String> expectedResult = new ArrayList<>() {{
             add("Кардиомагнум");
             add("Кардиомагнум");
@@ -19,30 +19,29 @@ public class AddMedicineOnFavorite extends BaseTest {
 
         new StartPage()
                 .open()
-                .searchMedicine(medicineName)
+                .searchMedicine(medicine1)
                 .clickOnSearchBtn();
         new SearchResultPage()
-                .titleHasNameMedicine(medicineName)
-                .addMedicineToFavorite("Кардиомагнум", 1)
-                .addMedicineToFavorite("Кардиомагнум", 2)
+                .titleHasNameMedicine(medicine1)
+                .addMedicineToFavorite(medicine1, 1)
+                .addMedicineToFavorite(medicine1, 2)
                 .openFavoriteWindow()
                 .checkFavorite(2, expectedResult);
     }
 
-
+    @Parameters("medicine2")
     @Test
-    public void test2() {
-        String medicineName = "Аспирин кардио";
+    public void test2(String medicine2) {
         List<String> expectedResult = new ArrayList<>() {{
             add("Аспирин кардио");
         }};
         new StartPage()
                 .open()
-                .searchMedicine(medicineName)
+                .searchMedicine(medicine2)
                 .clickOnSearchBtn();
         new SearchResultPage()
-                .titleHasNameMedicine(medicineName)
-                .addMedicineToFavorite("Аспирин кардио", 1)
+                .titleHasNameMedicine(medicine2)
+                .addMedicineToFavorite(medicine2, 1)
                 .openFavoriteWindow()
                 .checkFavorite(1, expectedResult);
     }
