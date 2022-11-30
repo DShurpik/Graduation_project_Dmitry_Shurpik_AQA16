@@ -2,14 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 
-<suite name="test">
+<suite name="test" thread-count="2" parallel="tests">
 
-    <test name="Create delete user">
+    <test name="Create delete user" enabled="true">
         <classes>
             <class name="CreateDeleteUser"/>
             <parameter name="name" value="John"/>
             <parameter name="lastName" value="Doe"/>
-            <parameter name="email" value="pasiijet476@nubotel.com"/>
+            <parameter name="email" value="pasasdsasasiiiiijet476@nubotel.com"/>
             <parameter name="password" value="d12345678"/>
         </classes>
     </test>
@@ -35,7 +35,7 @@
             <class name="IncorrectDataUse"/>
             <parameter name="name" value="John"/>
             <parameter name="lastName" value="Doe"/>
-            <parameter name="email" value="asasdasddasd@te.vom"/>
+            <parameter name="email" value="asasasddassddasd@te.vom"/>
             <parameter name="password" value="!!!!!!!!"/>
         </classes>
     </test>
@@ -45,18 +45,18 @@
             <class name="LimitValuesUse"/>
             <parameter name="name" value="John"/>
             <parameter name="lastName" value="Doe"/>
-            <parameter name="email" value="asaasdsdasddasd@te.vom"/>
+            <parameter name="email" value="testaqa1@dtest.com"/>
             <parameter name="password" value="d123456"/>
         </classes>
     </test>
 
-    <test name="test with bug">
+    <test name="test with bug" enabled="true">
         <classes>
             <class name="RepeatBug"/>
             <parameter name="name" value="John"/>
             <parameter name="lastName" value="Doe"/>
-            <parameter name="email1" value="asasdasdaasd@test.vom"/>
-            <parameter name="email2" value="dddddaasddsdd@test.vom"/>
+            <parameter name="email1" value="testingaqa116@test.vom"/>
+            <parameter name="email2" value="testingaqa1161@test.vom"/>
             <parameter name="password1" value="aaaaaaaa"/>
             <parameter name="password2" value="12345678"/>
         </classes>

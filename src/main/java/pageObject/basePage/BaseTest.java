@@ -3,15 +3,13 @@ package pageObject.basePage;
 import driver.DriverFactory;
 import driver.DriverManager;
 import io.github.bonigarcia.wdm.config.DriverManagerType;
-import listener.Listener;
+import testNgUtils.Listener;
 import lombok.extern.log4j.Log4j;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
-import static PropertyReader.PropertyReader.getProperties;
+import static propertyReader.PropertyReader.getProperties;
 import static driver.DriverManager.closeWebDriver;
 import static driver.DriverManager.getDriver;
 

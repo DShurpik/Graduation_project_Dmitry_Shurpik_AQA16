@@ -1,5 +1,5 @@
 import org.testng.annotations.Test;
-import pageObject.DropMeFiles.MainPage;
+import pageObject.dropMeFiles.MainPage;
 import pageObject.basePage.BaseTest;
 
 public class UploadFile extends BaseTest {

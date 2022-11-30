@@ -19,9 +19,9 @@ public class RepeatBug extends BaseTest {
                 .enterEmail(email1)
                 .enterPassword(password1)
                 .enterPasswordOnConfirmField(password1)
-                .clickOnRegisterBtn();
-        new StartPage()
-                .titleIsDisplayed();
+                .clickOnRegisterBtn()
+                .alertIsDisplayed();
+
     }
 
     @Parameters({"name", "lastName", "email2", "password2"})
@@ -37,8 +37,7 @@ public class RepeatBug extends BaseTest {
                 .enterEmail(email2)
                 .enterPassword(password2)
                 .enterPasswordOnConfirmField(password2)
-                .clickOnRegisterBtn();
-        new StartPage()
-                .titleIsDisplayed();
+                .clickOnRegisterBtn()
+                .alertIsDisplayed();
     }
 }

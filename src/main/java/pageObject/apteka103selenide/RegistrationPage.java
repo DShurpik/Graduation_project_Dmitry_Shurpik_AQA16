@@ -12,7 +12,7 @@ import static driver.DriverManager.getDriver;
 
 import static org.openqa.selenium.By.xpath;
 
-import static PropertyReader.PropertyReader.getProperties;
+import static propertyReader.PropertyReader.getProperties;
 
 public class RegistrationPage {
 

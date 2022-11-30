@@ -6,7 +6,7 @@
 
     <test name="Create delete user">
         <classes>
-            <class name="selenideTest.test1"></class>
+            <class name="selenideTest.CreateDeleteUser"/>
         </classes>
     </test>
 

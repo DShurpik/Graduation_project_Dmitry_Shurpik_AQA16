@@ -6,7 +6,7 @@ import pageObject.apteka103selenide.RegistrationPage;
 import pageObject.apteka103selenide.StartPage;
 import pageObject.basePage.SelenideBaseTest;
 
-public class test1 extends SelenideBaseTest {
+public class CreateDeleteUser extends SelenideBaseTest {
 
     @Test(description = "registration new user and check", enabled = true)
     public void test1() {

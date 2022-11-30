@@ -3,6 +3,8 @@ package pageObject.apteka103Page;
 import org.openqa.selenium.By;
 import pageObject.basePage.BasePage;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Set;
 
 public class AccountPage extends BasePage {
@@ -20,17 +22,9 @@ public class AccountPage extends BasePage {
         return this;
     }
 
-    public AccountPage navigate() {
-        String win1 = driver.getWindowHandle();
-        Set<String> tabs = driver.getWindowHandles();
-        String win2 = null;
-        for (String win : tabs) {
-            if (!win.equals(win1)) {
-                win2 = win;
-                break;
-            }
-        }
-        driver.switchTo().window(win2);
+    public AccountPage navigateTo() {
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
         return this;
     }
 }

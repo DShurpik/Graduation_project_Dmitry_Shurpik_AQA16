@@ -1,4 +1,4 @@
-package pageObject.DropMeFiles;
+package pageObject.dropMeFiles;
 
 import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.By;
@@ -18,7 +18,7 @@ public class MainPage extends BasePage {
     }
 
     public MainPage cliclOnuploadBtn() {
-        driver.findElement(uploadBtn).sendKeys(System.getProperty("user.dir") + "/src/test/resources/diplomWork.docx");
+        driver.findElement(uploadBtn).sendKeys(System.getProperty("user.dir") + "/files/diplomWork.docx");
         return this;
     }
 

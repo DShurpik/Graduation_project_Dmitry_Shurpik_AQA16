@@ -9,7 +9,7 @@ import pageObject.basePage.BaseTest;
 public class CreateDeleteUser extends BaseTest {
 
     @Parameters({"name", "lastName", "email", "password"})
-    @Test(description = "Create new user", priority = 1)
+    @Test(description = "Create new user")
     public void create_user_test(String name, String lastName, String email, String password) {
         new StartPage()
                 .open()
@@ -25,7 +25,7 @@ public class CreateDeleteUser extends BaseTest {
     }
 
     @Parameters({"name", "lastName", "email"})
-    @Test(description = "delete user profile", priority = 2)
+    @Test(description = "delete user profile", dependsOnMethods = "create_user_test")
     public void delete_user_test(String name, String lastName, String email) {
         new StartPage()
                 .getNameLastNameUser(name + " " + lastName)
@@ -34,7 +34,7 @@ public class CreateDeleteUser extends BaseTest {
         new AccountPage()
                 .clickOnSettingBtn()
                 .clickDeleteBtn()
-                .navigate();
+                .navigateTo();
         new DeleteUserPage()
                 .enterEmail(email)
                 .clickOnCheckBox()

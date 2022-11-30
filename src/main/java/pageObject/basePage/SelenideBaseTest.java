@@ -1,6 +1,6 @@
 package pageObject.basePage;
 
-import PropertyReader.SelenideListener;
+import testNgUtils.SelenideListener;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import lombok.extern.log4j.Log4j;
@@ -9,7 +9,6 @@ import org.testng.annotations.Listeners;
 
 import java.util.Properties;
 
-import static PropertyReader.PropertyReader.getProperties;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 import static com.codeborne.selenide.WebDriverRunner.driver;

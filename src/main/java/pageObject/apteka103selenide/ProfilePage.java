@@ -1,11 +1,10 @@
 package pageObject.apteka103selenide;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
-import static PropertyReader.PropertyReader.getProperties;
+import static propertyReader.PropertyReader.getProperties;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.switchTo;
 import static org.openqa.selenium.By.xpath;

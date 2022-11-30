@@ -68,7 +68,7 @@ public class Tests {
 
     public String getJson(String fileName) {
         try {
-            return new String(Files.readAllBytes(Paths.get("src/test/resources/" + fileName + ".json")));
+            return new String(Files.readAllBytes(Paths.get("files/" + fileName + ".json")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

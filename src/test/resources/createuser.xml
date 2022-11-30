@@ -9,7 +9,7 @@
             <class name="CreateDeleteUser"/>
             <parameter name="name" value="John"/>
             <parameter name="lastName" value="Doe"/>
-            <parameter name="email" value="pasijet476@nubotel.com"/>
+            <parameter name="email" value="testqa123456@nubotel.com"/>
             <parameter name="password" value="d12345678"/>
         </classes>
     </test>

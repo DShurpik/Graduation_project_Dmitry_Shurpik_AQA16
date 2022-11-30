@@ -3,15 +3,13 @@ package driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
 import java.util.Properties;
 
-import static PropertyReader.PropertyReader.getProperties;
-
+import static propertyReader.PropertyReader.getProperties;
 
 @Log4j
 

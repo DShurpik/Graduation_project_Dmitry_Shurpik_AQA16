@@ -1,10 +1,11 @@
-package PropertyReader;
+package testNgUtils;
 
 import com.codeborne.selenide.Configuration;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
+import propertyReader.PropertyReader;
 
-import static PropertyReader.PropertyReader.getProperties;
+import static propertyReader.PropertyReader.getProperties;
 
 
 public class SelenideListener implements ITestListener {

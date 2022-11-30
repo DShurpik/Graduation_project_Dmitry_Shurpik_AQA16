@@ -10,7 +10,7 @@ import org.testng.Assert;
 import java.time.Duration;
 import java.util.Properties;
 
-import static PropertyReader.PropertyReader.getProperties;
+import static propertyReader.PropertyReader.getProperties;
 import static driver.DriverManager.getDriver;
 
 @Log4j

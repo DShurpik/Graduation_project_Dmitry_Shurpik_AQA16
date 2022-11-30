@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 import java.util.Properties;
 
-import static PropertyReader.PropertyReader.getProperties;
+import static propertyReader.PropertyReader.getProperties;
 
 @Log4j
 
@@ -30,7 +30,7 @@ public class ChromeDriverManager extends DriverManager {
     protected static ChromeOptions getChromeOptions() {
         properties = getProperties();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments(properties.getProperty("browser.configs"));
         return chromeOptions;
     }
 }
